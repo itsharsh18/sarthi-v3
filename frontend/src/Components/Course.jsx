@@ -1,9 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Navbar from './Navbar'
 
 
 function Course() {
   return (
+    <>
+    <Navbar/>
     <div className='bg-neutral-100	h-full'>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 
@@ -143,7 +146,7 @@ function Course() {
 
 
 </div>
-
+</>
     
   )
 }

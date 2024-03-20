@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
+import Navbar from './Navbar';
 
 function Signin() {
   const [formData, setFormData] = useState({});
@@ -45,7 +46,7 @@ function Signin() {
 
   return (
     <>
-      <div className='min-h-screen mt-20'>
+      <div className='min-h-screen mt-20 bg-gray-100'>
         <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
           {/* left */}
           <div className='flex-1'>
@@ -56,39 +57,40 @@ function Signin() {
             </div>
           </div>
           {/* right */}
-          <div className='flex-1'>
-            <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-             
-             
-              <div>
-                <label htmlfor='email' />
+          <div className='flex-1 bg-white p-6 rounded-lg shadow-md'>
+            <form onSubmit={handleSubmit}>
+              <div className='my-5'>
+                <label htmlFor='email' className='block text-gray-600'>Email</label>
                 <input
                   type='email'
                   placeholder='name@company.com'
                   id='email'
                   onChange={handleChange}
+                  className='w-full border rounded-md px-4 py-2 focus:outline-none focus:border-blue-400'
                 />
               </div>
-
-              <div>
-
-                <label htmlfor='password' />
+              <div className='my-5'>
+                <label htmlFor='password' className='block text-gray-600'>Password</label>
                 <input
                   type='password'
                   placeholder='Password'
                   id='password'
                   onChange={handleChange}
+                  className='w-full border rounded-md px-4 py-2 focus:outline-none focus:border-blue-400'
                 />
               </div>
-              
-              <button id='' className='bg-black text-white' type='submit' disabled={loading}>
-                {loading ? <span className='pl-3'>Loading...</span> : 'Sign in'}
+              <button
+                className='bg-blue-600 text-white px-4 py-2 rounded-md w-full mt-5'
+                type='submit'
+                disabled={loading}
+              >
+                {loading ? 'Loading...' : 'Sign in'}
               </button>
             </form>
             <div className='flex gap-2 text-sm mt-5'>
-              <span>Have an account?</span>
-              <Link to='/sign-in' className='text-blue-500'>
-                Sign In
+              <span>Don't have an account?</span>
+              <Link to='/signup' className='text-blue-600'>
+                Sign Up
               </Link>
             </div>
           </div>

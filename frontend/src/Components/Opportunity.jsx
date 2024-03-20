@@ -2,9 +2,12 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
 import './image/Screenshot_2024-03-19-16-07-44-66_1c337646f29875672b5a61192b9010f9.jpg'
+import Navbar from './Navbar';
 
 function Opportunity() {
     return (
+        <>
+        <Navbar/>
         <div>
             <div className='bg-white text-orange-80 dark: '>
                 <div className="newforcolor text-red-700 underline text-center font-bold">
@@ -191,6 +194,7 @@ src='https://ffnews.com/wp-content/uploads/2015/09/Deutsche_Bank.png'
                 </section>
             </div>
         </div>
+        </>
     );
 }
 

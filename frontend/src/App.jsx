@@ -7,6 +7,7 @@ import Course from './Components/Course';
 import Week1 from './mediaplayer/Week1';
 import Footer from './Components/Footer';
 import Opportunity from './Components/Opportunity'; // Ensure correct import path
+import About from './Components/About';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/about' element={<About />} />
         <Route path='/login' element={<Signin />} />
         <Route path='/course' element={<Course />} />
         <Route path='/week-1' element={<Week1 />} />
