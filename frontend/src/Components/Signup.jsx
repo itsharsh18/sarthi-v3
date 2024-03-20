@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
 import Navbar from './Navbar';
 
@@ -12,6 +12,8 @@ function Signup() {
     avatar: null
   });
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -45,7 +47,7 @@ function Signup() {
       if (res.data.success === true) {
         localStorage.setItem('userData', JSON.stringify(res.data.data));
         console.log(res.data.message);
-        // Redirect or navigate to profile page
+        navigate("/login")
       }
     } catch (error) {
       console.error('Error:', error.message);
